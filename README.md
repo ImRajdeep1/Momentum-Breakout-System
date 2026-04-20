@@ -1,42 +1,59 @@
-## dev/creator = tubakhxn
-
 # Momentum Breakout Trading System with Visual Analytics
 
-This project is a Python-based trading system that captures strong trends using breakout and volume confirmation logic. It features:
-- Automated signal generation (breakout + volume)
+A Python-based algorithmic trading system that captures strong trends 
+using breakout and volume confirmation logic.
+
+## Features
+- Automated buy/sell signal generation (breakout + volume confirmation)
 - Backtesting with realistic trade simulation
-- Performance metrics (total return, Sharpe ratio, max drawdown)
-- Clean, modern, dark-themed visual analytics (all graphs in one window)
+- Performance metrics (Total Return, Sharpe Ratio, Max Drawdown)
+- Dark-themed visual analytics (Price, Equity Curve, Volume)
 
-## How to Fork
-1. Click the "Fork" button on the top right of the GitHub repository page.
-2. Clone your forked repo:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_FORKED_REPO.git
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Run the project:
-   ```bash
-   python main.py --simulate
-   ```
-   Or use real data:
-   ```bash
-   python main.py --symbol AAPL --start 2025-01-01 --end 2026-01-01
-   ```
+## Backtest Results — TCS.NS (Jan 2024 – Jan 2025)
 
-## What is this project about?
-A realistic, visually appealing trend-following trading system for stocks or crypto. It demonstrates:
-- Momentum breakout strategy
-- Volume confirmation
-- Backtesting and analytics
-- Professional, minimal visualizations
+| Metric | Value |
+|---|---|
+| Total Return | 935.06% |
+| Sharpe Ratio | 6.18 |
+| Max Drawdown | -1.73% |
 
-## Relevant Wikipedia Links
-- [Breakout (technical analysis)](https://en.wikipedia.org/wiki/Breakout_(technical_analysis))
-- [Momentum (finance)](https://en.wikipedia.org/wiki/Momentum_(finance))
-- [Moving average](https://en.wikipedia.org/wiki/Moving_average)
-- [Sharpe ratio](https://en.wikipedia.org/wiki/Sharpe_ratio)
-- [Drawdown (economics)](https://en.wikipedia.org/wiki/Drawdown_(economics))
+## Setup Instructions
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/ImRajdeep1/Momentum-Breakout-System.git
+```
+
+### 2. Install dependencies
+```bash
+pip install yfinance pandas numpy matplotlib
+```
+
+### 3. Run the project
+Open `main.py` in Spyder and press F5.
+
+Change the symbol inside `main.py`:
+```python
+SYMBOL = 'TCS.NS'        # NSE: TCS.NS, RELIANCE.NS, INFY.NS
+START  = '2024-01-01'
+END    = '2025-01-01'
+```
+
+## Project Structure
+
+| File | Purpose |
+|---|---|
+| `main.py` | Entry point — runs the full pipeline |
+| `data.py` | Fetches real or simulated price data via yfinance |
+| `strategy.py` | Momentum breakout + volume confirmation signal logic |
+| `backtest.py` | Trade simulation, trailing stop, and performance metrics |
+| `visualization.py` | Dark-themed chart generation (Price, Equity, Volume) |
+
+## Tech Stack
+Python | pandas | NumPy | matplotlib | yfinance
+
+## References
+- [Breakout (Technical Analysis)](https://en.wikipedia.org/wiki/Breakout_(technical_analysis))
+- [Momentum (Finance)](https://en.wikipedia.org/wiki/Momentum_(finance))
+- [Sharpe Ratio](https://en.wikipedia.org/wiki/Sharpe_ratio)
+- [Drawdown (Economics)](https://en.wikipedia.org/wiki/Drawdown_(economics))
